@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Bluecode Health</string>
+    <string name="add_mothers_data">Add Mothers Data</string>
+    <string name="view_mothers_data">View Mothers Data</string>
+    <string name="mothers_name">Mothers Name</string>
+    <string name="mothers_age">Mothers Age</string>
+    <string name="address">Address</string>
+    <string name="current_weight">Current Weight</string>
+    <string name="nrc_number">NRC Number</string>
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="plus">+</string>
 </resources>
