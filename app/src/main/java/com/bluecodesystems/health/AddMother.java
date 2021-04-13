@@ -2,6 +2,7 @@ package com.bluecodesystems.health;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,11 +26,22 @@ public class AddMother extends AppCompatActivity {
     EditText txtName, txtAge, txtNrc, txtWeight, txtPressure;
     TextView txtUid;
     private DatabaseHelper db;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mother);
+
+        toolbar = findViewById(R.id.toolbart);
+        setSupportActionBar(toolbar);
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
 
         Button button = findViewById(R.id.addchildview);
         button.setOnClickListener(v -> addline());
@@ -114,5 +126,10 @@ public class AddMother extends AppCompatActivity {
             }
 
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
     }
 }

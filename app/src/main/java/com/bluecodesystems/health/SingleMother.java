@@ -1,6 +1,7 @@
 package com.bluecodesystems.health;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,11 +26,22 @@ public class SingleMother extends AppCompatActivity {
     private TextView emptyView;
     RecyclerView.Adapter recyclerViewadapter;
     private ArrayList<Children> childList = new ArrayList<>();
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_mother);
+
+        toolbar = findViewById(R.id.toolbart);
+        setSupportActionBar(toolbar);
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         recyclerView = findViewById(R.id.recyclerView);
         emptyView = findViewById(R.id.empty);
@@ -73,5 +85,10 @@ public class SingleMother extends AppCompatActivity {
         recyclerViewadapter = new DBAdapter2(childList, SingleMother.this);
         recyclerView.setAdapter(recyclerViewadapter);
         recyclerViewadapter.notifyDataSetChanged();
+    }
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
     }
 }
