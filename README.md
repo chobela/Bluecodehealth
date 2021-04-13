@@ -15,4 +15,4 @@ This Mobile App has Three Primary Screens.
   <img src="http://app-express.net/bluecode/4.png" width="160">
 </p>
 
-[Download the APK here](https://github.com/chobela/Bluecodehealth/blob/master/app/release/app-release.apk)
+[Download the APK here](https://github.com/chobela/Bluecodehealth/raw/master/app/release/app-release.apk)
