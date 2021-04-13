@@ -10,5 +10,7 @@ This Mobile App has Three Primary Screens.
 
 <p float="left">
   <img src="http://app-express.net/bluecode/1.png" width="160">
-<img src="http://app-express.net/bluecode/2.png" width="160">
+  <img src="http://app-express.net/bluecode/2.png" width="160">
+  <img src="http://app-express.net/bluecode/3.png" width="160">
+  <img src="http://app-express.net/bluecode/4.png" width="160">
 </p>
