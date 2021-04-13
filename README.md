@@ -8,3 +8,4 @@ This Mobile App has Three Primary Screens.
 3. A screen that shows all the details of one particular mother that was saved.
 
 <img src="http://app-express.net/bluecode/1.png" width="200">
+<img src="http://app-express.net/bluecode/2.png" width="200">
