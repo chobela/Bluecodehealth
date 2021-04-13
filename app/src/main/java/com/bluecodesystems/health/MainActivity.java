@@ -31,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
 
                 break;
+
+            case R.id.viewmothers:
+
+                Intent i = new Intent(MainActivity.this, ViewMothers.class);
+                startActivity(i);
+
+                break;
         }
     }
 

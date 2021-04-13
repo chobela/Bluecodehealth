@@ -3,6 +3,7 @@ package com.bluecodesystems.health;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class AddMother extends AppCompatActivity {
         Button button = findViewById(R.id.addchildview);
         button.setOnClickListener(v -> addline());
 
-        String uid = UUID.randomUUID().toString();
+        String uid = UUID.randomUUID().toString().replace("-", "");
 
         txtUid = findViewById(R.id.uid);
         txtUid.setText(uid);
@@ -74,14 +75,14 @@ public class AddMother extends AppCompatActivity {
 
             db.saveMother(uid, name, age, nrc, weight, pressure);
 
-           /* Intent intent2 = new Intent(AddGuest.this, AllGuests.class);
-            startActivity(intent2);*/
+            Intent intent2 = new Intent(AddMother.this, ViewMothers.class);
+            startActivity(intent2);
 
             MDToast mdToast = MDToast.makeText(this, "Mother Saved", MDToast.LENGTH_SHORT, MDToast.TYPE_SUCCESS);
             mdToast.show();
 
         } else {
-            MDToast mdToast = MDToast.makeText(this, "Missing Field(s)", MDToast.LENGTH_SHORT, MDToast.TYPE_WARNING);
+            MDToast mdToast = MDToast.makeText(this, "Missing Fields", MDToast.LENGTH_SHORT, MDToast.TYPE_WARNING);
             mdToast.show();
         }
 
@@ -93,7 +94,7 @@ public class AddMother extends AppCompatActivity {
         LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         et.setLayoutParams(p);
         et.setId(numberOfLines + 1);
-        et.setHint("Child Name");
+        et.setHint("Childs Name");
         ll.addView(et);
         numberOfLines++;
     }

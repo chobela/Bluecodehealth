@@ -47,7 +47,7 @@ public class Children implements Serializable {
         this.mother = mother;
     }
 
-    public String getChildname(String string) {
+    public String getChildname() {
         return childname;
     }
 

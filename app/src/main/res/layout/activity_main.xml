@@ -43,7 +43,7 @@
             android:textColor="#FFFFFF"
             android:text="@string/view_mothers_data"
             android:layout_margin="8dp"
-            android:id="@+id/letsadd"
+            android:id="@+id/viewmothers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

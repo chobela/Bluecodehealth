@@ -95,7 +95,7 @@
                 android:id="@+id/child"
                 android:background="@drawable/edt_corner"
                 android:inputType="text"
-                android:hint="Child Name"
+                android:hint="Childs Name"
                 android:textColor="@android:color/black"
                 />
 

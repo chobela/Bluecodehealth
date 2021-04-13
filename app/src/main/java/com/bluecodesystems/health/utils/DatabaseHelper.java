@@ -119,18 +119,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<Children> children = new ArrayList<>();
 
         // Select All Query
-        String selectQuery = "SELECT * FROM " + Children.TABLE_NAME + " WHERE " + Children.MOTHER + " = " + mother + " ORDER BY " +
+        String selectQuery = "SELECT * FROM " + Children.TABLE_NAME + " WHERE " + Children.MOTHER + " = ? " + " ORDER BY " +
                 Children.COLUMN_ID + " DESC";
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+        Cursor cursor = db.rawQuery(selectQuery, new String[] {mother});
 
         if (cursor.moveToFirst()) {
             do {
                 Children child = new Children();
                 child.setId(cursor.getInt(cursor.getColumnIndex(Children.COLUMN_ID)));
                 child.setMother(cursor.getString(cursor.getColumnIndex(Children.MOTHER)));
-                child.getChildname(cursor.getString(cursor.getColumnIndex(Children.CHILDNAME)));
+                child.setChildname(cursor.getString(cursor.getColumnIndex(Children.CHILDNAME)));
 
                 children.add(child);
 
